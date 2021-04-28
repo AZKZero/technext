@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Technext</string>
+    <string name="author_image_contentdes">Author Image</string>
+    <string name="cover_photo">cover photo</string>
+    <string name="insert_blog">Insert Blog</string>
+    <string name="edit_blog">Edit Blog</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="cover">Cover</string>
+    <string name="authorId">Author Id</string>
+    <string name="authorName">Author Name</string>
+    <string name="authorAvatar">Author Avatar</string>
+    <string name="authorProfession">Author Profession</string>
+    <string name="save">Save</string>
+    <string name="update">Update</string>
+</resources>

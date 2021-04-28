@@ -1,0 +1,102 @@
+{
+	"formatVersion": 1,
+	"database": {
+		"version": 1,
+		"identityHash": "9db332cf1ad8597d5e3205d1ba2bbaff",
+		"entities": [
+			{
+				"tableName": "authors",
+				"createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `avatar` TEXT, `profession` TEXT)",
+				"fields": [
+					{
+						"fieldPath": "id",
+						"columnName": "id",
+						"affinity": "INTEGER",
+						"notNull": true
+					},
+					{
+						"fieldPath": "name",
+						"columnName": "name",
+						"affinity": "TEXT",
+						"notNull": false
+					},
+					{
+						"fieldPath": "avatar",
+						"columnName": "avatar",
+						"affinity": "TEXT",
+						"notNull": false
+					},
+					{
+						"fieldPath": "profession",
+						"columnName": "profession",
+						"affinity": "TEXT",
+						"notNull": false
+					}
+				],
+				"primaryKey": {
+					"columnNames": [
+						"id"
+					],
+					"autoGenerate": true
+				},
+				"indices": [],
+				"foreignKeys": []
+			},
+			{
+				"tableName": "blogs",
+				"createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`rowId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT, `description` TEXT, `cover_photo` TEXT, `categories` TEXT, `author_id` INTEGER NOT NULL)",
+				"fields": [
+					{
+						"fieldPath": "id",
+						"columnName": "rowId",
+						"affinity": "INTEGER",
+						"notNull": true
+					},
+					{
+						"fieldPath": "title",
+						"columnName": "title",
+						"affinity": "TEXT",
+						"notNull": false
+					},
+					{
+						"fieldPath": "description",
+						"columnName": "description",
+						"affinity": "TEXT",
+						"notNull": false
+					},
+					{
+						"fieldPath": "coverPhoto",
+						"columnName": "cover_photo",
+						"affinity": "TEXT",
+						"notNull": false
+					},
+					{
+						"fieldPath": "categories",
+						"columnName": "categories",
+						"affinity": "TEXT",
+						"notNull": false
+					},
+					{
+						"fieldPath": "authorId",
+						"columnName": "author_id",
+						"affinity": "INTEGER",
+						"notNull": true
+					}
+				],
+				"primaryKey": {
+					"columnNames": [
+						"rowId"
+					],
+					"autoGenerate": true
+				},
+				"indices": [],
+				"foreignKeys": []
+			}
+		],
+		"views": [],
+		"setupQueries": [
+			"CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+			"INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9db332cf1ad8597d5e3205d1ba2bbaff')"
+		]
+	}
+}

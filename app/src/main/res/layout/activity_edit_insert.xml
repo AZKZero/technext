@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="blog"
+            type="com.ghostware.technext.models.BlogAuthor" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.EditInsert">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:hint="@string/title"
+                    android:inputType="textPersonName"
+                    android:text='@{blog.title ?? ""}'
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:hint="@string/description"
+                    android:inputType="textMultiLine|textImeMultiLine"
+                    android:text='@{blog.description ?? ""}' />
+
+                <EditText
+                    android:id="@+id/cover"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:hint="@string/cover"
+                    android:inputType="textUri"
+                    android:text='@{blog.cover_photo ?? ""}' />
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/flex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:alignContent="flex_start"
+                    app:flexDirection="row"
+                    app:flexWrap="wrap" />
+
+                <EditText
+                    android:id="@+id/authorId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:hint="@string/authorId"
+                    android:inputType="number"
+                    android:text='@{String.valueOf(blog.author.id)}' />
+
+                <EditText
+                    android:id="@+id/authorName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:hint="@string/authorName"
+                    android:inputType="textPersonName"
+                    android:text='@{blog.author.name ?? ""}' />
+
+                <EditText
+                    android:id="@+id/authorAvatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:hint="@string/authorAvatar"
+                    android:inputType="textUri"
+                    android:text='@{blog.author.avatar ?? ""}' />
+
+                <EditText
+                    android:id="@+id/authorProfession"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:hint="@string/authorProfession"
+                    android:inputType="textPersonName"
+                    android:text='@{blog.author.profession ?? ""}' />
+            </LinearLayout>
+        </ScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@{blog.id==0? @string/save : @string/update}"
+            android:textAllCaps="false" />
+    </LinearLayout>
+</layout>
